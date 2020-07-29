@@ -6,7 +6,27 @@
   <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
 <script>
+
+  const pressedKeys = [];
+
+  const secrectCode = 'wesbos';
+
+    window.addEventListener('keyup',(event)=>{
+      console.log(event.key);
+      pressedKeys.push(event.key);
+      // console.log(-secrectCode.length-1,pressedKeys.length-secrectCode.length);
+      // console.log(pressedKeys);
+      pressedKeys.splice(-secrectCode.length-1, pressedKeys.length-secrectCode.length)
+
+      if(pressedKeys.join('').includes(secrectCode)){
+        console.log('good job!');
+        cornify_add();
+      }
+
+      console.log(pressedKeys);
+    })
 </script>
 </body>
 </html>
